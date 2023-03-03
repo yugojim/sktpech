@@ -34,7 +34,9 @@ apiurl='https://api.chimei.org.tw/webhooks/20010011'
 LINE_CHANNEL_SECRET ='7829750de3e8f4acde69750e8fef58bc' 
 LINE_CHANNEL_ACCESS_TOKEN ='jqllMrk8LltFwRLsG+01efujKZBcQ8wFcy7CsgY6/D70UFnj3FSF+gUIbysFfXsKYMn9oTDqPkUaTAIXeDNYanQXfub8JztcPLXr6OWTowk8C1q+8nLf8NLOMPNWVgOIAPU3O4qWvcuxMtGNlPQk6gdB04t89/1O/w1cDnyilFU='
 NGROK='https://stemi.chimei.org.tw'
-fhir='http://stemi.chimei.org.tw:8080/fhir/'
+#fhir = 'http://104.208.68.39:8080/fhir/'#4600VM
+#fhir = "http://61.67.8.220:8080/fhir/"#skh
+fhir = "http://106.105.181.72:8080/fhir/"#tpech
 
 #LINE_CHANNEL_SECRET ='67ac55fc89aa2de4a9ec4f27c022f84a'
 #LINE_CHANNEL_ACCESS_TOKEN ='xRk4XcXIQ7ZGxcqmQqioq/+/zU8DlJVleH4PZXu2AfPBF4Y22J4wMjgxKgUvCAPWhWhpCHRsgNsgJ3eUcTF8dKiK0fVR2DAZSIZaxAShBtzRvFmXloY++mVGlVKj5jN1Z0NdH/pzYsb06svwvo0SxAdB04t89/1O/w1cDnyilFU='
