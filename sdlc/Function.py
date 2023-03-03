@@ -323,13 +323,13 @@ def patient_medical_recordsCRUD(request):
     
     DiagnosticReportNursingjsonurl = fhir+'Composition?'
    
-    fhirip=request.POST['fhirip']
-    if fhirip!='':        
-        print(fhirip)
-    url = fhirip+'Organization?'
+    #fhirip=request.POST['fhirip']
+    #if fhirip!='':        
+    #    print(fhirip)
+    #url = fhirip+'Organization?'
     method=request.POST['method']
-    response = requests.request(method, url, headers=headers, data=payload, verify=False)    
-    print(response.text)
+    #response = requests.request(method, url, headers=headers, data=payload, verify=False)    
+    #print(response.text)
     resourceTypeid=request.POST['id']
     if resourceTypeid!='':        
         DiagnosticReportNursingjson['id']=resourceTypeid
