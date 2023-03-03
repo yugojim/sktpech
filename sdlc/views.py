@@ -1041,10 +1041,12 @@ def patient_medical_records(request):
     user = request.user
     #print(user.username)
     right=models.Permission.objects.filter(user__username__startswith=user.username)
-    #print(right)    
+    #print(right)   
+    fhirip=models.fhirip.objects.all()
     try:
         Result,data = Function.patient_medical_recordsCRUD(request)
         context = {
+                'fhirip' : fhirip,
                 'right' : right,
                 'FuncResult' : Result,
                 'data' : data
@@ -1053,6 +1055,7 @@ def patient_medical_records(request):
     except:
         context = {
                 'right' : right,
+                'fhirip' : fhirip,
                 'FuncResult' : 'Function'
             } 
         return render(request, 'patient_medical_records.html', context)

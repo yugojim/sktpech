@@ -1,6 +1,5 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'index' %}">
                 <div class="sidebar-brand-icon rotate-n-15">
@@ -49,7 +48,6 @@
 						<a class="collapse-item" href="{% url 'patient_medical_records' %}">門診病歷</a>
                         <a class="collapse-item" href="{% url 'patient_medical_records' %}">檢驗報告</a>
 						<a class="collapse-item" href="{% url 'patient_medical_records' %}">出院病摘</a>
-					    <h5 class="collapse-header">醫療影像及報告</h5>
                     </div>
                 </div>
             </li>
@@ -65,7 +63,6 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 						<a class="collapse-item" href="{% url 'ObservationImaging' %}">ObservationImaging EKG</a>
-                        <a class="collapse-item" href="{% url 'ambulance' %}">救護紀錄表</a>
                     </div>
                 </div>
             </li>
@@ -125,28 +122,10 @@
 						<a class="collapse-item" href="{% url 'Endpoint' %}">DICOM Endpoint</a>
 						<a class="collapse-item" href="{% url 'MolecularSequence' %}">基因序列</a>
 						<a class="collapse-item" href="{% url 'ObservationGenetics' %}">Observation-genetics</a>
-						<a class="collapse-item" href="{% url 'Gene' %}">TPMI基因報告</a>
+
                     </div>
                 </div>
             </li>
-			<li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePhenopacket"
-                    aria-expanded="true" aria-controls="collapsePhenopacket">
-                    <i class="fas fa-fw fa-notes-medical"></i>
-                    <span>Gene</span>
-                </a>
-                <div id="collapsePhenopacket" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{% url 'Phenopacket' %}">Phenopacket</a>
-                        <a class="collapse-item" href="{% url 'Biosample' %}">Biosample</a>                        
-						<a class="collapse-item" href="{% url 'Interpretation' %}">Interpretation</a>
-						<a class="collapse-item" href="{% url 'Individual' %}">Individual</a>
-						<a class="collapse-item" href="{% url 'ClinvarVariant' %}">ClinvarVariant</a>
-                    </div>
-                </div>
-            </li>
-
-
             <!-- Divider -->
 			{% endif %}
 			{% if right.0.administrative %}
@@ -196,8 +175,5 @@
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
-
-
-
         </ul>
         <!-- End of Sidebar -->

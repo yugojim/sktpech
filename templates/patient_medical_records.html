@@ -1,9 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,8 +9,7 @@
     <meta name="author" content="">
 	<link rel="icon" href="data:,">
     <title>Patient Medical Records</title>	
-	{% include 'utilities-css.html' %}
-	
+	{% include 'utilities-css.html' %}	
 </head>
 
 <body id="page-top">
@@ -36,6 +33,13 @@
 					{% csrf_token %}
 					<div class="form-group">
 						<div class="form-row">
+							<div class="form-group col-md-2">
+							  <select name="fhirip" class="form-control">
+								{% for fhir in fhirip %}
+								<option value="{{fhir.ip}}" > {{ fhir.location }} </option>
+								{% endfor %}
+							  </select>
+							</div>
 							<div class="form-group col-md-1">
 							  <select name="method" class="form-control">
 								<option value="GET" selected>查詢</option>

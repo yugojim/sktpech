@@ -6,9 +6,9 @@ import datetime
 import requests.packages.urllib3
 requests.packages.urllib3.disable_warnings()
 
-#fhir = 'http://104.208.68.39:8080/fhir/'#4600VM
+fhir = 'http://104.208.68.39:8080/fhir/'#4600VM
 #fhir = "http://61.67.8.220:8080/fhir/"#skh
-fhir = "http://106.105.181.72:8080/fhir/"#tpech
+#fhir = "http://106.105.181.72:8080/fhir/"#tpech
 #fhir = 'http://stemi.chimei.org.tw:8080/fhir/'
 
 headers = {    
@@ -323,7 +323,13 @@ def patient_medical_recordsCRUD(request):
     
     DiagnosticReportNursingjsonurl = fhir+'Composition?'
    
+    fhirip=request.POST['fhirip']
+    if fhirip!='':        
+        print(fhirip)
+    url = fhirip+'Organization?'
     method=request.POST['method']
+    response = requests.request(method, url, headers=headers, data=payload, verify=False)    
+    print(response.text)
     resourceTypeid=request.POST['id']
     if resourceTypeid!='':        
         DiagnosticReportNursingjson['id']=resourceTypeid
@@ -338,7 +344,7 @@ def patient_medical_recordsCRUD(request):
         response = requests.request(method, DiagnosticReportNursingjsonurl, headers=headers, data=payload, verify=False)
         
         resultjson=json.loads(response.text)
-        print(resultjson)
+        #print(resultjson)
         return ('GET OK',resultjson)
     elif method=='POST':
         response = requests.request(method, DiagnosticReportNursingjsonurl, headers=headers, data=payload, verify=False)
